@@ -36,6 +36,7 @@ app.get("/", (req, res) => {
   res.status(200).send("works");
 });
 
+//Routes and error handling
 app.use("/restaurant", Restaurant);
 app.use("/user", Users);
 app.use("/auth", Auth);
