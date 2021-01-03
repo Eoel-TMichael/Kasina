@@ -37,7 +37,7 @@ Auth.post("/login", async (req, res, next) => {
   console.log(req.body);
   await UserModel.findOne({ PhoneNumber: req.body.PhoneNumber })
     .then((data) => {
-      if (bcrypt.compareSync(req.body.Password, data.Password) === false) {
+      if (bcrypt.compare(req.body.Password, data.Password) === false) {
         res.status(422).send("try again");
         return false;
       } else {
